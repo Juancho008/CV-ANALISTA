@@ -71,7 +71,6 @@ header h2 {
   font-weight: 'bold';
   font-size: 3.8rem;
   font-family: 'Fredoka', sans-serif;
-  margin-left: -10px;
 }
 
 .texto-lateral-text{
@@ -83,7 +82,6 @@ header h2 {
   font-family: 'Dancing Script', cursive;
   font-size: 2.5rem;
   margin-bottom: 150px;
-  margin-left: 50px;
 }
 .dividor {
   display: grid;
@@ -122,7 +120,7 @@ button:hover{
   border-color: black;
 }
 .contacto input {
-  width: 340px;
+  width: 450px;
   height: 30px;
   margin-bottom: 10px;
   font-family: 'Fredoka', sans-serif;
@@ -130,7 +128,7 @@ button:hover{
 }
 
 .contacto textarea {
-  width: 340px;
+  width: 450px;
   height: 80px;
   font-size: 20px;
   font-family: 'Fredoka', sans-serif;
@@ -176,7 +174,7 @@ button:hover{
 footer{
   position:relative;
   bottom: 0;
-  left: 0;
+  left: 0%;
   right: 0;
   background: rgb(50, 50, 50);
   height: auto;
@@ -192,6 +190,7 @@ footer{
   justify-content: center;
   flex-direction: column;
   text-align: center;
+
 }
 .footer-content h3{
   font-size: 2.1rem;
@@ -239,7 +238,7 @@ footer{
 .footer-bottom{
   background: rgb(29, 28, 28);
   width: 100%;
-  padding: 10px;
+ 
   padding-bottom: 20px;
   text-align: center;
 }
@@ -268,25 +267,57 @@ display: block;
 @media screen and (max-width:1200px) {}
 
 @media screen and (max-width:740px) {
-  header h1 {
-    font-size: 3.0rem;
-  }
-
-  header h2 {
-    font-size: 1.5rem;
-  }
-
-  .navbar {
-    display: none;
+ 
+.texto-lateral-nombre{
+  font-size: 40px;
+  margin-left: 0;
+}
+.presentacion{
+  font-size: 35px;
+  margin-top: -200px;
+  margin-bottom: 50px;
+}
+.texto-lateral-text{
+  font-size: 15px;
+  margin-left: 0px;
+}
+span{
+  font-size: 20px;
+  margin-left: 0px;
+}
+  .navbar a{
+    font-size: 20px;
   }
 
   .contenedor-img-txt p {
     margin-left: 0px;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
   }
 
   .contenedor-img-txt h1 {
     margin-left: 0px;
     font-size: 2.5rem;
+  }
+  .dividor img{
+    width: 100px;
+    height: 100px;
+  }
+  .dividor2 img{
+    width: 150px;
+    height: 150px;
+  }
+  .dividor3 img{
+    width: 100px;
+    height: 100px;
+  }
+  .contenedor-todo textarea{
+    width: 300px;
+    margin-bottom: 20px ;
+  }
+  .contenedor-todo input{
+    width: 300px;
+  }
+  .mensaje h1{
+    font-size: 1.9rem;
   }
 }
