@@ -7,29 +7,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <title>CV - Analista de Sistemas - Juan Espindola.</title>
 </head>
 
 <body>
     <header>
         <div class="menu">
-            <!-- Logo de presentacion -->
             <div class="logo-firma">Juan E.</div>
+            <nav class="navbar">
+                <a href="#home">Inicio</a>
+                <a href="#about">Sobre mí</a>
+                <a href="#services">Proyectos</a>
+                <a href="#contact">Contacto</a>
+            </nav>
         </div>
-        <!-- IMG Con efecto parallax -->
+
         <div class="parallax">
+            <div class="typed"></div>
         </div>
     </header>
 
-    <main>
-        <div style="height:1000px;background-color:red;font-size:36px">
-            Scroll Up and Down this page to see the parallax scrolling effect.
-            This div is just here to enable scrolling.
-            Tip: Try to remove the background-attachment property to remove the scrolling effect.
-        </div>
-    </main>
+    <div class="content">
+        <h1>Bienvenido</h1>
+        <p>Contenido principal para demostrar el efecto de scroll con parallax.</p>
+    </div>
     <footer>
     </footer>
+    <script src="scripts/scripts.js"></script>
+
 </body>
 
 </html>
