@@ -3,7 +3,6 @@ const typed = new Typed(".typed", {
         "<b>Desarrollador WEB</b>",
         "<b>Desarrollador Front-End</b>",
         "<b>Analista en Sistemas</b>"
-
     ],
     typeSpeed: 50,
     startDelay: 200,
@@ -15,6 +14,7 @@ const typed = new Typed(".typed", {
     showCursor: false,
     contentType: 'html',
 });
+
 const menu = document.querySelector('.menu');
 const typeds = document.querySelector('.typed');
 
@@ -25,9 +25,45 @@ window.addEventListener('scroll', () => {
     } else {
         menu.classList.remove('scrolled');
         typeds.classList.remove('display-typed');
-
     }
 });
 
+// ✅ Definimos las funciones que faltaban
+function hideTyped() {
+    const typedElement = document.querySelector('.typed');
+    if (typedElement) {
+        typedElement.classList.add('display-typed');
+    }
+}
+
+function showTyped() {
+    const typedElement = document.querySelector('.typed');
+    if (typedElement) {
+        typedElement.classList.remove('display-typed');
+    }
+}
+
 setTimeout(hideTyped, 5000);
 setTimeout(showTyped, 10000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const navbar = document.getElementById("navbar");
+    const closeMenu = document.getElementById("closeMenu");
+
+    hamburger.addEventListener("click", () => {
+        navbar.classList.add("active");
+    });
+
+    closeMenu.addEventListener("click", () => {
+        navbar.classList.remove("active");
+    });
+
+    // Extra: cerrar al hacer clic en un enlace del menú (opcional)
+    const navLinks = navbar.querySelectorAll("a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            navbar.classList.remove("active");
+        });
+    });
+});
