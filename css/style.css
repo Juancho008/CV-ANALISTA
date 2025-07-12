@@ -6,17 +6,33 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
 body {
   font-family: "Fredoka", sans-serif;
 }
 
 .parallax {
+  position: relative;
   background-image: url("../img/parallax.jpg");
   min-height: 500px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
+  padding: 0;
 }
 
 .logo-firma {
@@ -82,7 +98,7 @@ body {
 }
 
 .typed {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
   position: absolute;
   top: 35%; /* Bajamos para que quede más cerca del logo */
   left: 50%;
@@ -110,7 +126,74 @@ body {
   z-index: 1100;
 }
 
+.carousel {
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  max-width: 600px;
+  max-width: 600px;
+  overflow: hidden;
+  top: 10rem;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease-in-out;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  transition: opacity 0.4s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
 @media (max-width: 768px) {
+  .carousel {
+    max-width: 90%;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+    padding: 4px 8px;
+  }
+
   .typed {
     top: 30%;
     padding: 0 20px;
@@ -140,7 +223,6 @@ body {
   .navbar.active {
     display: flex;
   }
-}
 
 .close-menu {
   display: none;
@@ -151,7 +233,6 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
   .hamburger {
     display: block;
     z-index: 1100;
