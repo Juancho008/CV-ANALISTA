@@ -157,7 +157,7 @@ body {
 }
 
 .carousel-slide img {
-  width: clamp(150px, 45%, 400px);
+  width: clamp(150px, 30%, 400px);
   height: auto;
   display: block;
 }
@@ -186,6 +186,13 @@ body {
 
 
 @media (max-width: 768px) {
+
+.carousel-slide img {
+  width: clamp(150px, 45%, 400px);
+  height: auto;
+  display: block;
+}
+
   .carousel {
     max-width: 90%;
   }
