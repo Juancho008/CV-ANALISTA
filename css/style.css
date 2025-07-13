@@ -133,7 +133,7 @@ body {
   max-width: 600px;
   max-width: 600px;
   overflow: hidden;
-  top: 10rem;
+  top: 16rem;
 }
 
 .carousel-track-container {
@@ -157,7 +157,7 @@ body {
 }
 
 .carousel-slide img {
-  max-width: 100%;
+  width: clamp(150px, 45%, 400px);
   height: auto;
   display: block;
 }
@@ -183,6 +183,7 @@ body {
 .carousel-btn.next {
   right: 10px;
 }
+
 
 @media (max-width: 768px) {
   .carousel {
