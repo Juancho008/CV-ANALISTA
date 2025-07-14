@@ -233,3 +233,33 @@ function lanzarConfetti() {
     }));
   }, 250);
 }
+
+  window.onload = function () {
+    introJs()
+      .setOptions({
+        nextLabel: "Siguiente",
+        prevLabel: "Anterior",
+        skipLabel: "x",
+        doneLabel: "Ok!",
+        hidePrev: true,
+      })
+      .oncomplete(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      })
+      .onexit(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      })
+      .start();
+  };
+
+  document.querySelectorAll('.card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      Swal.fire({
+        title: card.querySelector('h3').innerText,
+        text: card.getAttribute('data-texto'),
+        icon: 'info',
+        confirmButtonColor: '#4e4eff',
+      });
+    });
+  });

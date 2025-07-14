@@ -53,7 +53,19 @@ Este proyecto es una presentación moderna y dinámica de mi experiencia, proyec
 - Web: [https://www.npmjs.com/package/canvas-confetti](https://www.npmjs.com/package/canvas-confetti)
 
 ---
+### 7. **Intro.js**
 
+-   Librería para crear tours interactivos y guías de usuario sobre la interfaz.
+
+-   Permite destacar elementos clave (como las cards) y explicar su funcionalidad antes de que el usuario interactúe.
+
+-   Totalmente personalizable y multilenguaje (usado aquí en español).
+
+-   CDN para CSS y JS: ` https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css`,
+` https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js` 
+- Web: [https://introjs.com/](https://introjs.com/)
+
+---
 ## 🚀 Características destacadas
 
 - **Formulario de contacto con envío instantáneo:** gracias a EmailJS y SweetAlert2, el usuario recibe feedback claro sin recargar la página.  
@@ -96,5 +108,5 @@ Email: juanignacioespindola08@gmail.com
 
 ---
 
-*Este README fue generado automáticamente para documentar las librerías y características del proyecto.*
+*Este README fue generado automáticamente para documentar las librerías y características del proyecto, incluyendo la nueva guía interactiva con Intro.js.*
 
