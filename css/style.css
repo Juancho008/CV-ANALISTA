@@ -347,3 +347,16 @@ body {
   font-size: 16px;
   max-width: 90vw;
 }
+
+.proyectos {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.proyectos h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Kaushan Script', cursive;
+}
