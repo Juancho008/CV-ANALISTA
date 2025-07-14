@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -183,16 +184,18 @@ body {
 .carousel-btn.next {
   right: 10px;
 }
-
-
+#closeMenu{
+  display: none;
+}
 @media (max-width: 768px) {
-
-.carousel-slide img {
-  width: clamp(150px, 45%, 400px);
-  height: auto;
+  .carousel-slide img {
+    width: clamp(150px, 45%, 400px);
+    height: auto;
+    display: block;
+  }
+#closeMenu{
   display: block;
 }
-
   .carousel {
     max-width: 90%;
   }
@@ -232,14 +235,14 @@ body {
     display: flex;
   }
 
-.close-menu {
-  display: none;
-  margin-top: 20px;
-  font-size: 1.8rem;
-  color: white;
-  text-align: center;
-  cursor: pointer;
-}
+  .close-menu {
+    display: none;
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+  }
 
   .hamburger {
     display: block;
@@ -274,4 +277,73 @@ body {
   .close-menu {
     display: block;
   }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Esto ayuda a empujar el contenido */
+  height: 100%;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100px;
+  height: auto;
+  margin: 15px auto;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2em;
+  color: #333;
+  min-height: 60px;
+}
+
+.card p {
+  color: #666;
+  font-size: 0.95em;
+  margin-top: auto;
+}
+
+.experiencia-laboral {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+.experiencia-laboral h2 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+  font-family: "Kaushan Script", cursive;
+}
+.swal2-card-popup {
+  font-size: 16px;
+  max-width: 90vw;
 }
