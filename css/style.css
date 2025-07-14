@@ -131,8 +131,7 @@ body {
   margin: 0 auto;
   padding: 0;
   position: relative;
-  max-width: 600px;
-  max-width: 600px;
+  max-width: 800px;
   overflow: hidden;
   top: 16rem;
 }
@@ -434,4 +433,64 @@ body {
   .sobre-mi-contenido {
     align-items: center;
   }
+}
+
+.carousel-bg {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+@media (max-width: 576px) {
+  .carousel-bg {
+    height: 200px;
+  }
+  .carousel-caption {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+#carouselSobreMi .carousel-control-prev-icon,
+#carouselSobreMi .carousel-control-next-icon {
+  filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(0%) contrast(100%);
+  background-color: black;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+#carouselSobreMi .carousel-control-prev,
+#carouselSobreMi .carousel-control-next {
+  width: 50px;
+  top: 45%;
+}
+
+#carouselSobreMi {
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.carousel-img-wrapper {
+  width: 30%;
+}
+
+.carousel-img-wrapper img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-img-wrapper {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .carousel-img-wrapper img {
+    height: 220px;
+  }
+}
+
+#certificaciones{
+  top: -3rem;
 }
