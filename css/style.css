@@ -488,10 +488,16 @@ body {
     margin: 0 auto;
   }
   .carousel-img-wrapper img {
-    height: 220px;
+    height: 130px;
   }
 }
 
 #certificaciones{
   top: -3rem;
+}
+
+.swal2-certificacion-popup {
+  max-width: 90vw !important;
+  border-radius: 12px;
+  padding: 20px;
 }

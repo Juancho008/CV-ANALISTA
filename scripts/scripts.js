@@ -118,3 +118,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const imgsCertificaciones = document.querySelectorAll(
+    "#certificaciones .carousel-img-wrapper img"
+  );
+
+  imgsCertificaciones.forEach((img) => {
+    img.addEventListener("click", () => {
+      Swal.fire({
+        title: img.alt,
+        imageUrl: img.src,
+        imageAlt: img.alt,
+        showCloseButton: true,
+        background: "#1e1e1e",
+        color: "#fff",
+        imageWidth: "80%",
+        confirmButtonText: "Cerrar",
+        customClass: {
+          popup: "swal2-certificacion-popup",
+        },
+      });
+    });
+  });
+});
