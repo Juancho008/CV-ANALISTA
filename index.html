@@ -13,6 +13,7 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -180,7 +181,7 @@
       </a>
     </div>
 
-    <section class="sobre-mi-box" id="about">
+    <section class="sobre-mi-box" id="mi">
       <div class="sobre-mi-icono">
         <img src="img/juan.jpg" alt="Foto de perfil" />
       </div>
@@ -214,8 +215,9 @@
         </p>
 
         <p>
-          Gracias por tomarte el tiempo de conocerme. ¡Estoy listo para empezar
-          algo grande!
+          Gracias por tomarte el tiempo de conocerme.<b
+            >¡Estoy listo para empezar algo grande!</b
+          >
         </p>
       </div>
     </section>
@@ -223,7 +225,7 @@
     <!-- Carousel al final -->
     <div
       id="certificaciones"
-      class="carousel  carousel-dark  slide mt-3 mb-3"
+      class="carousel carousel-dark slide mt-3 mb-3"
       data-bs-ride="carousel"
     >
       <div class="carousel-inner">
@@ -278,7 +280,7 @@
           </div>
         </div>
 
-          <div class="carousel-item">
+        <div class="carousel-item">
           <div class="d-flex justify-content-center gap-3">
             <div class="carousel-img-wrapper">
               <img
@@ -324,6 +326,44 @@
         <span class="carousel-control-next-icon"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
+    </div>
+
+    <div class="contact-container">
+      <div class="contact-left">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+          <p>📞 3764 251775</p>
+          <p>
+            📧
+            <a href="#" style="color: #0066ff; text-decoration: none"
+              >juanignacioespindola08@gmail.com</a
+            >
+          </p>
+          <p>📍 Argentina - Misiones - Posadas</p>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <h2>Contactame</h2>
+        <form onsubmit="enviar(event)">
+          <input type="hidden" id="title" value="CV Contacto" />
+          <input id="name" type="text" placeholder="Nombre" required />
+          <input id="email" type="email" placeholder="Correo" required />
+          <input id="cel" type="text" placeholder="Telefono" />
+          <textarea id="message" rows="4" placeholder="Mensaje"></textarea>
+          <button onclick="enviar()">Enviar</button>
+        </form>
+        <!-- Contenedor para el mensaje de cargando -->
+        <div
+          id="loading"
+          style="display: none; margin-top: 10px; text-align: center"
+        >
+          <div class="spinner"></div>
+          <div style="margin-top: 8px; color: #555; font-weight: 600">
+            Enviando mensaje...
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer></footer>

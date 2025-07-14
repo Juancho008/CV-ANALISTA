@@ -142,3 +142,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+emailjs.init("3i7vSTHCRrRHH7Sch");
+
+function enviar(e) {
+  e.preventDefault();
+
+  const loading = document.getElementById("loading");
+  loading.style.display = "block";
+
+  emailjs
+    .send("service_z5k5v53", "template_663m05n", {
+      name: document.getElementById("name").value,
+      message: document.getElementById("message").value,
+      email: document.getElementById("email").value,
+      title: document.getElementById("title").value,
+      cel: document.getElementById("cel").value,
+    })
+    .then(() => {
+      loading.style.display = "none";
+
+      Swal.fire({
+        icon: "success",
+        title: "¡Mensaje enviado!",
+        text: "Gracias por contactarte, te responderé pronto.",
+        confirmButtonColor: "#4e4eff",
+      });
+
+      document.querySelector("form").reset();
+    })
+    .catch((error) => {
+      loading.style.display = "none";
+
+      Swal.fire({
+        icon: "error",
+        title: "Error al enviar",
+        text: "Ocurrió un problema. Intentá de nuevo más tarde.",
+        footer: "<code>" + JSON.stringify(error) + "</code>",
+        confirmButtonColor: "#d33",
+      });
+    });
+}
+
+
+
+
+
