@@ -60,7 +60,7 @@ body {
   transition: background-color 0.4s ease-in-out;
 }
 
-.navbar {
+.navbar-ham {
   display: flex;
   gap: 15px;
 }
@@ -69,7 +69,7 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.navbar a {
+.navbar-ham a {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
@@ -77,7 +77,7 @@ body {
   transition: color 0.3s;
 }
 
-.navbar a:hover {
+.navbar-ham a:hover {
   color: #00bcd4;
 }
 
@@ -124,15 +124,15 @@ body {
   font-size: 2rem;
   cursor: pointer;
   color: white;
-  z-index: 1101;
-  position: relative;
+  z-index: 1100;
 }
 
 .carousel {
   margin: 0 auto;
   padding: 0;
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
+  max-width: 600px;
   overflow: hidden;
   top: 16rem;
 }
@@ -184,16 +184,8 @@ body {
 .carousel-btn.next {
   right: 10px;
 }
-
-#closeMenu {
+#closeMenu{
   display: none;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 1101;
 }
 @media (max-width: 768px) {
   .carousel-slide img {
@@ -201,11 +193,9 @@ body {
     height: auto;
     display: block;
   }
-
-  .hamburger {
-    display: block;
-  }
-
+#closeMenu{
+  display: block;
+}
   .carousel {
     max-width: 90%;
   }
@@ -228,23 +218,20 @@ body {
     display: block;
   }
 
-  .navbar {
+  .navbar-ham {
     display: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
+    gap: 10px;
     width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
-    position: fixed;
-    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
     left: 0;
-    padding: 60px 20px;
-    z-index: 1100;
+    padding: 10px 20px;
+    animation: fadeIn 0.3s ease-out;
   }
 
-  .navbar.active {
+  .navbar-ham.active {
     display: flex;
   }
 
@@ -262,10 +249,29 @@ body {
     z-index: 1100;
   }
 
-  .navbar a {
+  .navbar-ham {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 40px 20px;
+    z-index: 1000;
+  }
+
+  .navbar-ham.active {
+    display: flex;
+  }
+
+  .navbar-ham a {
     font-size: 1.5rem;
     color: white;
-    text-decoration: none;
   }
 
   .close-menu {

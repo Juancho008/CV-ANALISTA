@@ -47,7 +47,7 @@ setTimeout(showTyped, 10000);
 
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
-  const navbar = document.getElementById("navbar");
+  const navbar = document.getElementById("navbar-ham");
   const closeMenu = document.getElementById("closeMenu");
 
   hamburger.addEventListener("click", () => {
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(nextSlide, 3000);
   updateSlidePosition();
 
- const cards = document.querySelectorAll(".card");
+  const cards = document.querySelectorAll(".card");
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -102,17 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   cards.forEach((card) => {
     card.addEventListener("click", () => {
-      const texto = card.getAttribute("data-texto") || "Información no disponible.";
+      const texto =
+        card.getAttribute("data-texto") || "Información no disponible.";
       const titulo = card.querySelector("h3").textContent;
 
       Swal.fire({
         title: titulo,
         text: texto,
-        icon: 'info',
-        confirmButtonText: 'Cerrar',
+        icon: "info",
+        confirmButtonText: "Cerrar",
         customClass: {
-          popup: 'swal2-card-popup'
-        }
+          popup: "swal2-card-popup",
+        },
       });
     });
   });
