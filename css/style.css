@@ -2467,23 +2467,91 @@ body.music-consent-open {
         width: min(300px, calc(100vw - 24px));
     }
 
+    /* Colapsado en móvil: chip mínimo (como selector de idioma) */
     .spotify-player.is-collapsed {
         right: 12px;
         left: auto;
-        width: min(300px, calc(100vw - 24px));
+        width: auto;
     }
 
-    .spotify-player:not(.is-collapsed) .spotify-embed-wrap.is-loaded iframe {
-        height: 280px;
+    .spotify-player.is-collapsed .spotify-player-shell {
+        padding: 6px;
+        width: fit-content;
+        overflow: visible;
+    }
+
+    .spotify-player.is-collapsed .spotify-player-body {
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+    }
+
+    .spotify-player.is-collapsed .spotify-embed-wrap {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        width: 300px;
+        height: 80px;
+        margin: 0;
+        opacity: 0.01;
+        pointer-events: none;
+        z-index: -1;
+        border: 0;
     }
 
     .spotify-player.is-collapsed .spotify-embed-wrap.is-loaded iframe {
         height: 80px;
     }
 
+    .spotify-player.is-collapsed .spotify-collapse-btn {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 8px 12px;
+        gap: 6px;
+        color: var(--light-gray);
+        background: transparent;
+    }
+
+        .spotify-player.is-collapsed .spotify-chip-icon {
+            display: block;
+        }
+
+        .spotify-player.is-collapsed .spotify-chip-label {
+            display: block;
+        }
+
+        .spotify-player.is-collapsed .icon-collapse,
+        .spotify-player.is-collapsed .icon-expand {
+            display: none;
+        }
+
+        .spotify-player.is-collapsed .spotify-collapse-btn:hover {
+            color: var(--white1);
+            background: var(--onyx);
+        }
+
+    .spotify-player:not(.is-collapsed) .spotify-embed-wrap.is-loaded {
+        overflow: hidden;
+        margin-bottom: 6px;
+    }
+
+    .spotify-player:not(.is-collapsed) .spotify-embed-wrap.is-loaded iframe {
+        height: 152px;
+        display: block;
+    }
+
+    .spotify-player:not(.is-collapsed) .spotify-player-body {
+        padding: 36px 8px 8px;
+    }
+
     .spotify-player:not(.is-collapsed) .spotify-player-shell {
-        max-height: min(50vh, 360px);
-        overflow-y: auto;
+        max-height: none;
+        overflow: visible;
+    }
+
+    .spotify-player:has(.spotify-embed-wrap.is-loaded):not(.is-collapsed) .spotify-controls {
+        margin-top: 0;
     }
 
     .spotify-player:not(.is-collapsed) .spotify-collapse-btn {
