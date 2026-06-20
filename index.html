@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -58,7 +58,7 @@
                     </div>
                     <iframe
                         data-spotify-iframe
-                        title="Spotify — playlist CV"
+                        title="Spotify â€” playlist CV"
                         width="100%"
                         height="352"
                         loading="lazy"
@@ -100,6 +100,7 @@
         <aside class="sidebar " data-sidebar>
             <div class="sidebar-info">
                 <figure class="avatar-box">
+                    <img src="/miFoto/YO%20X2.png" alt="Juan Espindola" width="96" height="96" loading="eager">
                 </figure>
 
                 <div class="info-content">
@@ -186,8 +187,10 @@
                 <ul class="navbar-list">
                     <li class="navbar-item"><button class="navbar-link active" data-nav-link data-page="about" data-i18n="nav.about">About</button></li>
                     <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="resume" data-i18n="nav.resume">Resume</button></li>
-                    <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="certifications" data-i18n="nav.certifications">Certifications</button></li>
-<!--                     <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="portfolio" data-i18n="nav.portfolio">Portfolio</button></li> -->
+                    <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="certifications">
+                        <span class="navbar-label navbar-label--full" data-i18n="nav.certifications">Certifications / Projects</span>
+                        <span class="navbar-label navbar-label--short" data-i18n="nav.certificationsShort">Certs. / Projects</span>
+                    </button></li>
                     <!-- <li class="navbar-item"><button class="navbar-link" data-nav-link>Blog</button></li> -->
                     <li class="navbar-item"><button class="navbar-link" data-nav-link data-page="contact" data-i18n="nav.contact">Contact</button></li>
                 </ul>
@@ -199,7 +202,7 @@
                 </header>
 
                 <section class="about-text">
-                    <p data-i18n="about.p1">Analista en Sistemas, con experiencia en el desarrollo de software, integración de tecnologías y optimización de soluciones. A lo largo de mi trayectoria, he trabajado con diversas librerías y herramientas, lo que me ha permitido resolver problemas de manera eficiente e innovadora. Estoy en constante aprendizaje y siempre en busca de nuevos desafíos que impulsen mi crecimiento como desarrollador.</p>
+                    <p data-i18n="about.p1">Analista en Sistemas, con experiencia en el desarrollo de software, integraciÃ³n de tecnologÃ­as y optimizaciÃ³n de soluciones. A lo largo de mi trayectoria, he trabajado con diversas librerÃ­as y herramientas, lo que me ha permitido resolver problemas de manera eficiente e innovadora. Estoy en constante aprendizaje y siempre en busca de nuevos desafÃ­os que impulsen mi crecimiento como desarrollador.</p>
                 </section>
 
                 <section class="service">
@@ -283,6 +286,12 @@
                     <h2 class="h2 article-title" data-i18n="resume.title">Resume</h2>
                 </header>
 
+                <nav class="work-subnav" role="tablist" data-work-subnav aria-label="Resume sections">
+                    <button class="work-subnav-btn active" type="button" role="tab" data-work-tab="curriculum" aria-selected="true" data-i18n="resume.tabCurriculum">Curriculum</button>
+                    <button class="work-subnav-btn" type="button" role="tab" data-work-tab="experience" aria-selected="false" data-i18n="resume.tabExperience">Experience</button>
+                </nav>
+
+                <div class="work-subpanel active" data-work-panel="curriculum">
                 <section class="timeline">
                     <div class="title-wrapper">
                         <div class="icon-box"><ion-icon name="book-outline"></ion-icon></div>
@@ -292,15 +301,15 @@
 
                     <ol class="timeline-list">
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-i18n="resume.edu1.title">NORMAL N° 10 — Analista en Sistemas</h4>
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.edu1.title">NORMAL NÂ° 10 â€” Analista en Sistemas</h4>
                             <span>2018</span>
-                            <p class="timeline-text" data-i18n="resume.edu1.text">Allí aprendí los fundamentos básicos de la programación para posteriormente perfeccionarme en la misma.</p>
+                            <p class="timeline-text" data-i18n="resume.edu1.text">AllÃ­ aprendÃ­ los fundamentos bÃ¡sicos de la programaciÃ³n para posteriormente perfeccionarme en la misma.</p>
                         </li>
 
                         <li class="timeline-item">
-                            <h4 class="h4 timeline-item-title" data-i18n="resume.edu2.title">BOP N°1 — Colegio secundario orientado a la tecnicatura</h4>
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.edu2.title">BOP NÂ°1 â€” Colegio secundario orientado a la tecnicatura</h4>
                             <span>2014</span>
-                            <p class="timeline-text" data-i18n="resume.edu2.text">Aprendí mucho de cálculos matemáticos y desarrollé una sólida comprensión de conceptos técnicos.</p>
+                            <p class="timeline-text" data-i18n="resume.edu2.text">AprendÃ­ mucho de cÃ¡lculos matemÃ¡ticos y desarrollÃ© una sÃ³lida comprensiÃ³n de conceptos tÃ©cnicos.</p>
                         </li>
                     </ol>
                 </section>
@@ -335,13 +344,62 @@
                         <li class="skill-chip" data-i18n="resume.skills.vercel">Vercel</li>
                     </ul>
                 </section>
+                </div>
+
+                <div class="work-subpanel" data-work-panel="experience" hidden>
+                <section class="timeline">
+                    <div class="title-wrapper">
+                        <div class="icon-box"><ion-icon name="briefcase-outline"></ion-icon></div>
+
+                        <h3 class="h3" data-i18n="resume.experience">Work Experience</h3>
+                    </div>
+
+                    <ol class="timeline-list">
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.exp3.title">Web Developer — Mascotas en Camino</h4>
+                            <span data-i18n="resume.exp3.period">Present</span>
+                            <p class="timeline-text" data-i18n="resume.exp3.text">Design and development of a pet catalog web application deployed on Vercel with a modern and responsive interface.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.exp1.title">Full Stack Developer — Sanatorio Boratti</h4>
+                            <span data-i18n="resume.exp1.period">2025 — Present</span>
+                            <p class="timeline-text" data-i18n="resume.exp1.text">Development and maintenance of the institutional portal, self-service totems and guard totem. Work with AI, PHP, JavaScript, Node.js and Laravel. Legacy system maintenance.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.exp2.title">Full Stack Developer — Chamber of Deputies of Misiones</h4>
+                            <span data-i18n="resume.exp2.period">2022 — 2025</span>
+                            <p class="timeline-text" data-i18n="resume.exp2.text">Development of the institutional mobile portal with parliamentary information and public services. Work with AI, PHP, JavaScript, Node.js and Python. Legacy system maintenance.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.exp4.title">Web Programmer — LAV</h4>
+                            <span data-i18n="resume.exp4.period">2021 — 2022</span>
+                            <p class="timeline-text" data-i18n="resume.exp4.text">Web development and support for institutional digital solutions.</p>
+                        </li>
+
+                        <li class="timeline-item">
+                            <h4 class="h4 timeline-item-title" data-i18n="resume.exp5.title">Intern — Santander Río</h4>
+                            <span data-i18n="resume.exp5.period">2021 — 2022</span>
+                            <p class="timeline-text" data-i18n="resume.exp5.text">IT internship with support in systems and web development tasks.</p>
+                        </li>
+                    </ol>
+                </section>
+                </div>
             </article>
 
             <article class="certifications" data-page="certifications">
                 <header>
-                    <h2 class="h2 article-title" data-i18n="cert.title">Certifications</h2>
+                    <h2 class="h2 article-title" data-i18n="cert.title">Certifications / Projects</h2>
                 </header>
 
+                <nav class="work-subnav" role="tablist" data-work-subnav aria-label="Certifications and projects">
+                    <button class="work-subnav-btn active" type="button" role="tab" data-work-tab="certifications" aria-selected="true" data-i18n="cert.tabCertifications">Certifications</button>
+                    <button class="work-subnav-btn" type="button" role="tab" data-work-tab="projects" aria-selected="false" data-i18n="cert.tabProjects">Projects</button>
+                </nav>
+
+                <div class="work-subpanel active" data-work-panel="certifications">
                 <section class="cert-gallery-section">
                     <div class="title-wrapper">
                         <div class="icon-box"><ion-icon name="ribbon-outline"></ion-icon></div>
@@ -369,20 +427,20 @@
                                 <li class="cert-carousel-slide">
                                     <ul class="cert-gallery" data-cert-gallery>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/Itba.png" aria-label="Certificación Avanzada en Full Stack Developer - ITBA">
-                                <img src="/certificaciones/Itba.png" alt="Certificación Avanzada en Full Stack Developer - ITBA" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/Itba.png" aria-label="CertificaciÃ³n Avanzada en Full Stack Developer - ITBA">
+                                <img src="/certificaciones/Itba.png" alt="CertificaciÃ³n Avanzada en Full Stack Developer - ITBA" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/full.png" aria-label="Desarrolla una aplicación Full Stack">
-                                <img src="/certificaciones/full.png" alt="Desarrolla una aplicación Full Stack" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/full.png" aria-label="Desarrolla una aplicaciÃ³n Full Stack">
+                                <img src="/certificaciones/full.png" alt="Desarrolla una aplicaciÃ³n Full Stack" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/desarrolloweb.png" aria-label="Introducción al Desarrollo Web">
-                                <img src="/certificaciones/desarrolloweb.png" alt="Introducción al Desarrollo Web" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/desarrolloweb.png" aria-label="IntroducciÃ³n al Desarrollo Web">
+                                <img src="/certificaciones/desarrolloweb.png" alt="IntroducciÃ³n al Desarrollo Web" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -399,8 +457,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58273_07072025.png" aria-label="SQL Interactivo - Certificado de finalización">
-                                <img src="/certificaciones/58273_07072025.png" alt="SQL Interactivo - Certificado de finalización" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58273_07072025.png" aria-label="SQL Interactivo - Certificado de finalizaciÃ³n">
+                                <img src="/certificaciones/58273_07072025.png" alt="SQL Interactivo - Certificado de finalizaciÃ³n" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -411,8 +469,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/8738_06022024(2).png" aria-label="SQL Interactivo - Consultas básicas">
-                                <img src="/certificaciones/8738_06022024(2).png" alt="SQL Interactivo - Consultas básicas" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/8738_06022024(2).png" aria-label="SQL Interactivo - Consultas bÃ¡sicas">
+                                <img src="/certificaciones/8738_06022024(2).png" alt="SQL Interactivo - Consultas bÃ¡sicas" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -429,8 +487,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58252_07072025.png" aria-label="SQL Interactivo - Inserción, edición y eliminación">
-                                <img src="/certificaciones/58252_07072025.png" alt="SQL Interactivo - Inserción, edición y eliminación" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58252_07072025.png" aria-label="SQL Interactivo - InserciÃ³n, ediciÃ³n y eliminaciÃ³n">
+                                <img src="/certificaciones/58252_07072025.png" alt="SQL Interactivo - InserciÃ³n, ediciÃ³n y eliminaciÃ³n" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -441,8 +499,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58264_07072025.png" aria-label="SQL Interactivo - Consultas sobre múltiples tablas">
-                                <img src="/certificaciones/58264_07072025.png" alt="SQL Interactivo - Consultas sobre múltiples tablas" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58264_07072025.png" aria-label="SQL Interactivo - Consultas sobre mÃºltiples tablas">
+                                <img src="/certificaciones/58264_07072025.png" alt="SQL Interactivo - Consultas sobre mÃºltiples tablas" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -453,8 +511,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58272_07072025.png" aria-label="SQL Interactivo - Normalización">
-                                <img src="/certificaciones/58272_07072025.png" alt="SQL Interactivo - Normalización" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/58272_07072025.png" aria-label="SQL Interactivo - NormalizaciÃ³n">
+                                <img src="/certificaciones/58272_07072025.png" alt="SQL Interactivo - NormalizaciÃ³n" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -477,8 +535,8 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/accesible.png" aria-label="Diseño accesible e inclusivo">
-                                <img src="/certificaciones/accesible.png" alt="Diseño accesible e inclusivo" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/accesible.png" aria-label="DiseÃ±o accesible e inclusivo">
+                                <img src="/certificaciones/accesible.png" alt="DiseÃ±o accesible e inclusivo" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -501,38 +559,38 @@
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1775171304728.jpg" aria-label="Inmersión Agentes de AI - Alura">
-                                <img src="/certificaciones/1775171304728.jpg" alt="Inmersión Agentes de AI - Alura" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1775171304728.jpg" aria-label="InmersiÃ³n Agentes de AI - Alura">
+                                <img src="/certificaciones/1775171304728.jpg" alt="InmersiÃ³n Agentes de AI - Alura" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/f93830a1-cd2b-4770-b8dd-9eaa529d49bc.png" aria-label="Inmersión IA - Alura con Google Gemini">
-                                <img src="/certificaciones/f93830a1-cd2b-4770-b8dd-9eaa529d49bc.png" alt="Inmersión IA - Alura con Google Gemini" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/f93830a1-cd2b-4770-b8dd-9eaa529d49bc.png" aria-label="InmersiÃ³n IA - Alura con Google Gemini">
+                                <img src="/certificaciones/f93830a1-cd2b-4770-b8dd-9eaa529d49bc.png" alt="InmersiÃ³n IA - Alura con Google Gemini" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758545095218.jpg" aria-label="IA Generativa en Front-end: Semántica y HTML - Alura">
-                                <img src="/certificaciones/1758545095218.jpg" alt="IA Generativa en Front-end: Semántica y HTML - Alura" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758545095218.jpg" aria-label="IA Generativa en Front-end: SemÃ¡ntica y HTML - Alura">
+                                <img src="/certificaciones/1758545095218.jpg" alt="IA Generativa en Front-end: SemÃ¡ntica y HTML - Alura" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758544476668.jpg" aria-label="Lógica de Programación: Primeros Pasos - Alura">
-                                <img src="/certificaciones/1758544476668.jpg" alt="Lógica de Programación: Primeros Pasos - Alura" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758544476668.jpg" aria-label="LÃ³gica de ProgramaciÃ³n: Primeros Pasos - Alura">
+                                <img src="/certificaciones/1758544476668.jpg" alt="LÃ³gica de ProgramaciÃ³n: Primeros Pasos - Alura" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758545002271.jpg" aria-label="Lógica de Programación: Conceptos Primordiales - Alura">
-                                <img src="/certificaciones/1758545002271.jpg" alt="Lógica de Programación: Conceptos Primordiales - Alura" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758545002271.jpg" aria-label="LÃ³gica de ProgramaciÃ³n: Conceptos Primordiales - Alura">
+                                <img src="/certificaciones/1758545002271.jpg" alt="LÃ³gica de ProgramaciÃ³n: Conceptos Primordiales - Alura" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
                         <li class="cert-card">
-                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758544792113.jpg" aria-label="Lógica de Programación: Juegos y Animaciones - Alura">
-                                <img src="/certificaciones/1758544792113.jpg" alt="Lógica de Programación: Juegos y Animaciones - Alura" loading="lazy" width="400" height="280">
+                            <button class="cert-card-btn" type="button" data-cert-img="/certificaciones/1758544792113.jpg" aria-label="LÃ³gica de ProgramaciÃ³n: Juegos y Animaciones - Alura">
+                                <img src="/certificaciones/1758544792113.jpg" alt="LÃ³gica de ProgramaciÃ³n: Juegos y Animaciones - Alura" loading="lazy" width="400" height="280">
                                 <span class="cert-card-overlay"><ion-icon name="expand-outline"></ion-icon></span>
                             </button>
                         </li>
@@ -544,25 +602,16 @@
                         <div class="cert-carousel-dots" data-cert-dots></div>
                     </div>
                 </section>
-
-                <div class="cert-lightbox" data-cert-lightbox>
-                    <div class="overlay" data-cert-overlay></div>
-
-                    <div class="cert-lightbox-content">
-                        <button class="modal-close-btn cert-lightbox-close" type="button" data-cert-close aria-label="Close">
-                            <ion-icon name="close-outline"></ion-icon>
-                        </button>
-                        <img src="" alt="" data-cert-lightbox-img>
-                    </div>
                 </div>
-            </article>
 
-            <article class="portfolio " data-page="portfolio">
-                <header>
-                    <h2 class="h2 article-title" data-i18n="portfolio.title">Portfolio</h2>
-                </header>
-
+                <div class="work-subpanel" data-work-panel="projects" hidden>
                 <section class="projects">
+                    <div class="title-wrapper">
+                        <div class="icon-box"><ion-icon name="code-slash-outline"></ion-icon></div>
+
+                        <h3 class="h3" data-i18n="portfolio.subtitle">My Projects</h3>
+                    </div>
+
                     <div class="filter-select-box">
                         <button class="filter-select " data-select>
                             <div class="select-value" data-select-value data-i18n="portfolio.selectCategory">Select Category</div>
@@ -582,141 +631,104 @@
 
                     <ul class="project-list">
                         <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
+                            <a href="https://mascotas-en-camino-catalogo-eight.vercel.app/" target="_blank" rel="noopener noreferrer">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
+                                        <ion-icon name="open-outline"></ion-icon>
                                     </div>
 
-                                    <img src="https://i.postimg.cc/qRHpHMyd/project-1.jpg" alt="finance" loading="lazy">
+                                    <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://mascotas-en-camino-catalogo-eight.vercel.app/" alt="Catálogo Mascotas en Camino" loading="lazy" width="1000" height="750">
                                 </figure>
 
-                                <h3 class="project-title">Finance</h3>
+                                <h3 class="project-title" data-i18n="portfolio.project.mascotas">Mascotas en Camino — Catálogo</h3>
                                 <p class="project-category" data-i18n="portfolio.categoryWebDev">Web Development</p>
                             </a>
                         </li>
 
                         <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
+                            <a href="https://portal.sanatorioboratti.com.ar/" target="_blank" rel="noopener noreferrer">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
+                                        <ion-icon name="open-outline"></ion-icon>
                                     </div>
 
-                                    <img src="https://i.postimg.cc/bNrcM2Wt/project-2.png" alt="orizon" loading="lazy">
+                                    <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://portal.sanatorioboratti.com.ar/" alt="Portal Sanatorio Boratti" loading="lazy" width="1000" height="750">
                                 </figure>
 
-                                <h3 class="project-title">Orizon</h3>
-                                <p class="project-category" data-i18n="portfolio.categoryWebDev">Web Development</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="https://i.postimg.cc/jSJVqYsq/project-3.jpg" alt="fundo" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Fundo</h3>
-                                <p class="project-category" data-i18n="portfolio.categoryWebDesign">Web Design</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="https://i.postimg.cc/dtpXxNGb/project-4.png" alt="brawlhalla" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Brawlhalla</h3>
-                                <p class="project-category" data-i18n="portfolio.categoryApps">Applications</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="https://i.postimg.cc/43T0JKLw/project-5.png" alt="dsm." loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">DSM.</h3>
-                                <p class="project-category" data-i18n="portfolio.categoryWebDesign">Web Design</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web design">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="https://i.postimg.cc/qR1DX1kZ/project-6.png" alt="metaspark" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Metaspark</h3>
-                                <p class="project-category" data-i18n="portfolio.categoryWebDesign">Web Design</p>
-                            </a>
-                        </li>
-
-                        <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
-                                <figure class="project-img">
-                                    <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
-                                    </div>
-
-                                    <img src="https://i.postimg.cc/Kj4q9tjc/project-7.png" alt="summary" loading="lazy">
-                                </figure>
-
-                                <h3 class="project-title">Summary</h3>
+                                <h3 class="project-title" data-i18n="portfolio.project.boratti">Portal Sanatorio Boratti</h3>
                                 <p class="project-category" data-i18n="portfolio.categoryWebDev">Web Development</p>
                             </a>
                         </li>
 
                         <li class="project-item active" data-filter-item data-category="applications">
-                            <a href="#">
+                            <a href="https://portal.sanatorioboratti.com.ar/totem" target="_blank" rel="noopener noreferrer">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
+                                        <ion-icon name="open-outline"></ion-icon>
                                     </div>
 
-                                    <img src="https://i.postimg.cc/rw2j4B1w/project-8.jpg" alt="task manager" loading="lazy">
+                                    <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://portal.sanatorioboratti.com.ar/totem" alt="Tótem Sanatorio Boratti" loading="lazy" width="1000" height="750">
                                 </figure>
 
-                                <h3 class="project-title">Task Manager</h3>
+                                <h3 class="project-title" data-i18n="portfolio.project.totem">Tótem — Sanatorio Boratti</h3>
+                                <p class="project-category" data-i18n="portfolio.categoryApps">Applications</p>
+                            </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="applications">
+                            <a href="https://portal.sanatorioboratti.com.ar/totemGuardia" target="_blank" rel="noopener noreferrer">
+                                <figure class="project-img">
+                                    <div class="project-item-icon-box">
+                                        <ion-icon name="open-outline"></ion-icon>
+                                    </div>
+
+                                    <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://portal.sanatorioboratti.com.ar/totemGuardia" alt="Tótem Guardia Sanatorio Boratti" loading="lazy" width="1000" height="750">
+                                </figure>
+
+                                <h3 class="project-title" data-i18n="portfolio.project.totemGuardia">Tótem Guardia — Sanatorio Boratti</h3>
                                 <p class="project-category" data-i18n="portfolio.categoryApps">Applications</p>
                             </a>
                         </li>
 
                         <li class="project-item active" data-filter-item data-category="web development">
-                            <a href="#">
+                            <a href="https://www.diputadosmisiones.gov.ar/nuevo/index_mobile.php" target="_blank" rel="noopener noreferrer">
                                 <figure class="project-img">
                                     <div class="project-item-icon-box">
-                                        <ion-icon name="eye-outline"></ion-icon>
+                                        <ion-icon name="open-outline"></ion-icon>
                                     </div>
 
-                                    <img src="https://i.postimg.cc/7LxNsSQv/project-9.png" alt="arrival" loading="lazy">
+                                    <img src="https://image.thum.io/get/width/1000/crop/750/noanimate/https://www.diputadosmisiones.gov.ar/nuevo/index_mobile.php" alt="Portal móvil Cámara de Diputados de Misiones" loading="lazy" width="1000" height="750">
                                 </figure>
 
-                                <h3 class="project-title">Arrival</h3>
+                                <h3 class="project-title" data-i18n="portfolio.project.diputados">Cámara de Diputados — Portal móvil</h3>
                                 <p class="project-category" data-i18n="portfolio.categoryWebDev">Web Development</p>
                             </a>
+                        </li>
+
+                        <li class="project-item active" data-filter-item data-category="web development">
+                            <div class="project-card-static">
+                                <figure class="project-img">
+                                    <img src="/img/lavregister.png" alt="Sistema de Facturación - LAV" loading="lazy" width="1000" height="750">
+                                </figure>
+
+                                <h3 class="project-title" data-i18n="portfolio.project.lavregister">Sistema de Facturación - LAV</h3>
+                                <p class="project-category" data-i18n="portfolio.categoryWebDev">Web Development</p>
+                            </div>
                         </li>
                     </ul>
                 </section>
+                </div>
+
+                <div class="cert-lightbox" data-cert-lightbox>
+                    <div class="overlay" data-cert-overlay></div>
+
+                    <div class="cert-lightbox-content">
+                        <button class="modal-close-btn cert-lightbox-close" type="button" data-cert-close aria-label="Close">
+                            <ion-icon name="close-outline"></ion-icon>
+                        </button>
+                        <img src="" alt="" data-cert-lightbox-img>
+                    </div>
+                </div>
             </article>
 
             
@@ -726,8 +738,21 @@
                 </header>
 
                 <section class="mapbox" data-mapbox>
-                    <figure>
-                        <iframe src="https://maps.google.com/maps?q=H.+Quiroga+6624,+Posadas,+Misiones&hl=es&z=16&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <button class="mapbox-load" type="button" data-map-load>
+                        <ion-icon name="map-outline" aria-hidden="true"></ion-icon>
+                        <span data-i18n="contact.loadMap">Tap to view map</span>
+                    </button>
+
+                    <figure class="mapbox-embed" data-map-embed hidden>
+                        <iframe
+                            data-map-iframe
+                            title="Ubicación — H. Quiroga 6624, Posadas, Misiones"
+                            width="600"
+                            height="450"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            allowfullscreen>
+                        </iframe>
                     </figure>
                 </section>
 

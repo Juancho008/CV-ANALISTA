@@ -116,6 +116,49 @@ for(let i = 0; i < formInputs.length; i++) {
 
 // Enabling Page Navigation 
 
+const MAP_EMBED_URL = 'https://maps.google.com/maps?q=H.+Quiroga+6624,+Posadas,+Misiones&hl=es&z=16&output=embed';
+const mapbox = document.querySelector('[data-mapbox]');
+const mapLoadBtn = document.querySelector('[data-map-load]');
+const mapEmbed = document.querySelector('[data-map-embed]');
+const mapIframe = document.querySelector('[data-map-iframe]');
+
+function isMobileViewport() {
+    return window.matchMedia('(max-width: 1023px)').matches;
+}
+
+function loadContactMap() {
+    if (!mapIframe || !mapbox) return;
+
+    if (!mapIframe.src) {
+        mapIframe.src = MAP_EMBED_URL;
+    }
+
+    mapbox.classList.add('is-loaded');
+    if (mapEmbed) mapEmbed.hidden = false;
+}
+
+function resetContactMap() {
+    if (!mapIframe || !mapbox) return;
+
+    mapIframe.removeAttribute('src');
+    mapbox.classList.remove('is-loaded');
+    if (mapEmbed) mapEmbed.hidden = true;
+}
+
+function handleContactPage(pageName) {
+    if (pageName === 'contact') {
+        if (!isMobileViewport()) {
+            loadContactMap();
+        }
+    } else {
+        resetContactMap();
+    }
+}
+
+if (mapLoadBtn) {
+    mapLoadBtn.addEventListener('click', loadContactMap);
+}
+
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
 const pages = document.querySelectorAll('article[data-page]');
 
@@ -133,6 +176,8 @@ for(let i = 0; i < navigationLinks.length; i++) {
                 navigationLinks[j].classList.remove('active');
             }
         }
+
+        handleContactPage(pageName);
     });
 }
 
@@ -251,6 +296,38 @@ function initCertCarousel() {
 }
 
 initCertCarousel();
+
+// Certifications / Projects sub-tabs
+
+function initWorkSubnav() {
+    document.querySelectorAll('[data-work-subnav]').forEach(function (subnav) {
+        const container = subnav.closest('article');
+        if (!container) return;
+
+        const tabs = subnav.querySelectorAll('[data-work-tab]');
+        const panels = container.querySelectorAll('[data-work-panel]');
+
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                const target = tab.dataset.workTab;
+
+                tabs.forEach(function (t) {
+                    const isActive = t.dataset.workTab === target;
+                    t.classList.toggle('active', isActive);
+                    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                });
+
+                panels.forEach(function (panel) {
+                    const isActive = panel.dataset.workPanel === target;
+                    panel.classList.toggle('active', isActive);
+                    panel.hidden = !isActive;
+                });
+            });
+        });
+    });
+}
+
+initWorkSubnav();
 
 // Certification lightbox
 
