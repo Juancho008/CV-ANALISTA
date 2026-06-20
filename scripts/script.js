@@ -135,3 +135,153 @@ for(let i = 0; i < navigationLinks.length; i++) {
         }
     });
 }
+
+// Certification carousel
+
+const CERTS_PER_PAGE = 8;
+
+function initCertCarousel() {
+    const carousel = document.querySelector('[data-cert-carousel]');
+    const gallery = document.querySelector('[data-cert-gallery]');
+    const track = document.querySelector('[data-cert-track]');
+    const prevBtn = document.querySelector('[data-cert-prev]');
+    const nextBtn = document.querySelector('[data-cert-next]');
+    const statusEl = document.querySelector('[data-cert-status]');
+    const dotsEl = document.querySelector('[data-cert-dots]');
+
+    if (!carousel || !gallery || !track) return;
+
+    const cards = Array.from(gallery.querySelectorAll('.cert-card'));
+    track.innerHTML = '';
+
+    for (let i = 0; i < cards.length; i += CERTS_PER_PAGE) {
+        const slide = document.createElement('li');
+        slide.className = 'cert-carousel-slide';
+
+        const slideGallery = document.createElement('ul');
+        slideGallery.className = 'cert-gallery';
+
+        cards.slice(i, i + CERTS_PER_PAGE).forEach(function (card) {
+            slideGallery.appendChild(card);
+        });
+
+        slide.appendChild(slideGallery);
+        track.appendChild(slide);
+    }
+
+    const slides = track.querySelectorAll('.cert-carousel-slide');
+    let currentIndex = 0;
+
+    function updateCarousel() {
+        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
+
+        if (statusEl) {
+            statusEl.textContent = (currentIndex + 1) + ' / ' + slides.length;
+        }
+
+        if (prevBtn) prevBtn.disabled = currentIndex === 0;
+        if (nextBtn) nextBtn.disabled = currentIndex === slides.length - 1;
+
+        if (dotsEl) {
+            dotsEl.querySelectorAll('.cert-carousel-dot').forEach(function (dot, index) {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+    }
+
+    if (dotsEl) {
+        dotsEl.innerHTML = '';
+        slides.forEach(function (_, index) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'cert-carousel-dot' + (index === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Page ' + (index + 1));
+            dot.addEventListener('click', function () {
+                currentIndex = index;
+                updateCarousel();
+            });
+            dotsEl.appendChild(dot);
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            if (currentIndex < slides.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        });
+    }
+
+    let touchStartX = 0;
+
+    carousel.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', function (e) {
+        const diff = e.changedTouches[0].screenX - touchStartX;
+        if (Math.abs(diff) < 50) return;
+
+        if (diff < 0 && currentIndex < slides.length - 1) {
+            currentIndex++;
+            updateCarousel();
+        } else if (diff > 0 && currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    }, { passive: true });
+
+    if (slides.length <= 1) {
+        const header = carousel.querySelector('.cert-carousel-header');
+        if (header) header.style.display = 'none';
+        if (dotsEl) dotsEl.style.display = 'none';
+    }
+
+    updateCarousel();
+}
+
+initCertCarousel();
+
+// Certification lightbox
+
+const certButtons = document.querySelectorAll('[data-cert-img]');
+const certLightbox = document.querySelector('[data-cert-lightbox]');
+const certLightboxImg = document.querySelector('[data-cert-lightbox-img]');
+const certCloseBtn = document.querySelector('[data-cert-close]');
+const certOverlay = document.querySelector('[data-cert-overlay]');
+
+const certLightboxToggle = function (open) {
+    if (!certLightbox) return;
+    certLightbox.classList.toggle('active', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+};
+
+if (certButtons.length && certLightbox && certLightboxImg) {
+    certButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const img = this.querySelector('img');
+            certLightboxImg.src = this.dataset.certImg;
+            certLightboxImg.alt = img ? img.alt : '';
+            certLightboxToggle(true);
+        });
+    });
+
+    if (certCloseBtn) certCloseBtn.addEventListener('click', function () { certLightboxToggle(false); });
+    if (certOverlay) certOverlay.addEventListener('click', function () { certLightboxToggle(false); });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && certLightbox.classList.contains('active')) {
+            certLightboxToggle(false);
+        }
+    });
+}
