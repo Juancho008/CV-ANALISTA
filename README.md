@@ -13,7 +13,7 @@ Currículum vitae personal en formato web: sitio estático, responsive y biling�
 | **Sidebar** | Nombre, títulos profesionales, datos de contacto, ubicación (Posadas, Misiones) con enlace a Google Maps, redes (GitHub, CodePen, LinkedIn) |
 | **Sobre mí** | Presentación como Analista en Sistemas y cuatro servicios: diseño web, desarrollo web, integración de IA y mantenimiento de código legacy |
 | **Currículum** | Educación (NORMAL N° 10 — Analista en Sistemas; BOP N°1 — secundaria técnica) y habilidades en chips (PHP, JavaScript, TypeScript, React, Node.js, Laravel, SQL, IA, Cloudflare, Vercel, etc.) |
-| **Certificaciones** | Galería de 22 certificados con carrusel (8 por página), navegación por flechas, puntos y swipe en móvil; lightbox al hacer clic en cada imagen |
+| **Certificaciones** | Galería de 28 certificados con carrusel (8 por página), navegación por flechas, puntos y swipe en móvil; lightbox al hacer clic en cada imagen |
 | **Contacto** | Mapa embebido y formulario de contacto con validación básica del lado del cliente |
 
 ### Funcionalidades extra
@@ -109,7 +109,7 @@ Resumen de lo implementado en esta versión del CV:
 1. **Perfil actualizado** — Enfoque en Analista en Sistemas, servicios profesionales y datos de contacto reales (dirección, redes, mapa).
 2. **Bilingüe ES/EN** — Selector fijo, traducciones completas y transición visual al cambiar idioma.
 3. **Habilidades** — Chips sin porcentajes, con stack actual (TypeScript, Tailwind, React Native, ChromaDB, Cloudflare, etc.).
-4. **Certificaciones** — Nueva pestaña con 22 certificados, carrusel paginado, lightbox y soporte táctil.
+4. **Certificaciones** — Nueva pestaña con 28 certificados, carrusel paginado, lightbox y soporte táctil.
 5. **Reproductor Spotify** — Playlist personal, consentimiento GDPR-style, estados minimizado/expandido diferenciados para PC y móvil.
 6. **UX responsive** — En móvil el reproductor colapsado ocupa el mínimo espacio posible; al expandir se evita el hueco negro del iframe.
 7. **UI** — Animaciones en contactos y tarjetas de servicios, títulos en chips flex y estilo coherente con el selector de idioma.
