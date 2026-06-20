@@ -84,7 +84,9 @@ const translations = {
         'music.consentTitle': 'Play music?',
         'music.consentText': 'This site includes a Spotify playlist. If you accept, the player will load so you can listen while browsing the CV. You may need to press play once inside the Spotify player.',
         'music.consentAccept': 'Yes, play music',
-        'music.consentDecline': 'No, thanks'
+        'music.consentDecline': 'No, thanks',
+        'music.minimize': 'Minimize player',
+        'music.expand': 'Expand player'
     },
     es: {
         'meta.title': 'Curriculum Vitae',
@@ -169,7 +171,9 @@ const translations = {
         'music.consentTitle': '¿Reproducir música?',
         'music.consentText': 'Este sitio incluye una playlist de Spotify. Si aceptás, se cargará el reproductor para que puedas escuchar mientras navegás el CV. Es posible que debas pulsar play una vez dentro del reproductor de Spotify.',
         'music.consentAccept': 'Sí, reproducir música',
-        'music.consentDecline': 'No, gracias'
+        'music.consentDecline': 'No, gracias',
+        'music.minimize': 'Minimizar reproductor',
+        'music.expand': 'Expandir reproductor'
     }
 };
 

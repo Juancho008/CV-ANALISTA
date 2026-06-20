@@ -32,7 +32,28 @@ function initMusicPlayer() {
 
     function openPlayer() {
         player.classList.remove('is-collapsed');
-        if (collapseBtn) collapseBtn.setAttribute('aria-expanded', 'true');
+        if (collapseBtn) {
+            collapseBtn.setAttribute('aria-expanded', 'true');
+            updateCollapseLabel(false);
+        }
+    }
+
+    function collapsePlayer() {
+        player.classList.add('is-collapsed');
+        if (collapseBtn) {
+            collapseBtn.setAttribute('aria-expanded', 'false');
+            updateCollapseLabel(true);
+        }
+    }
+
+    function updateCollapseLabel(collapsed) {
+        if (!collapseBtn) return;
+        const isMobile = window.matchMedia('(max-width: 579px)').matches;
+        if (isMobile) {
+            collapseBtn.setAttribute('aria-label', collapsed ? 'Expand music player' : 'Minimize music player');
+        } else {
+            collapseBtn.setAttribute('aria-label', collapsed ? 'Expand player' : 'Minimize player');
+        }
     }
 
     function loadSpotifyEmbed() {
@@ -41,7 +62,8 @@ function initMusicPlayer() {
         iframe.src = SPOTIFY_PLAYLIST.embedUrl;
         if (embedWrap) embedWrap.classList.add('is-loaded');
         if (placeholder) placeholder.hidden = true;
-        openPlayer();
+
+        collapsePlayer();
     }
 
     function closeModal() {
@@ -75,7 +97,9 @@ function initMusicPlayer() {
         collapseBtn.addEventListener('click', function () {
             const collapsed = player.classList.toggle('is-collapsed');
             collapseBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+            updateCollapseLabel(collapsed);
         });
+        updateCollapseLabel(player.classList.contains('is-collapsed'));
     }
 
     if (placeholder) {
@@ -89,7 +113,12 @@ function initMusicPlayer() {
     const savedConsent = localStorage.getItem(CONSENT_KEY);
 
     if (savedConsent === 'accepted') {
-        loadSpotifyEmbed();
+        if (iframe && !iframe.src) {
+            iframe.src = SPOTIFY_PLAYLIST.embedUrl;
+            if (embedWrap) embedWrap.classList.add('is-loaded');
+            if (placeholder) placeholder.hidden = true;
+        }
+        collapsePlayer();
     } else if (savedConsent === 'declined') {
         player.classList.add('is-declined');
     } else {
