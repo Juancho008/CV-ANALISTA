@@ -9,7 +9,10 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-sidebarBtn.addEventListener("click", function() {elementToggleFunc(sidebar); })
+sidebarBtn.addEventListener("click", function () {
+    elementToggleFunc(sidebar);
+    sidebarBtn.setAttribute("aria-expanded", sidebar.classList.contains("active"));
+});
 
 //Activating Modal-testimonial
 
@@ -121,32 +124,35 @@ const mapbox = document.querySelector('[data-mapbox]');
 const mapLoadBtn = document.querySelector('[data-map-load]');
 const mapEmbed = document.querySelector('[data-map-embed]');
 const mapIframe = document.querySelector('[data-map-iframe]');
+let mapPrefetched = false;
 
 function isMobileViewport() {
     return window.matchMedia('(max-width: 1023px)').matches;
 }
 
+function prefetchContactMap() {
+    if (!mapIframe || mapPrefetched) return;
+
+    mapIframe.src = MAP_EMBED_URL;
+    mapPrefetched = true;
+}
+
 function loadContactMap() {
     if (!mapIframe || !mapbox) return;
 
-    if (!mapIframe.src) {
-        mapIframe.src = MAP_EMBED_URL;
-    }
-
+    prefetchContactMap();
     mapbox.classList.add('is-loaded');
-    if (mapEmbed) mapEmbed.hidden = false;
 }
 
 function resetContactMap() {
-    if (!mapIframe || !mapbox) return;
+    if (!mapbox) return;
 
-    mapIframe.removeAttribute('src');
     mapbox.classList.remove('is-loaded');
-    if (mapEmbed) mapEmbed.hidden = true;
 }
 
 function handleContactPage(pageName) {
     if (pageName === 'contact') {
+        prefetchContactMap();
         if (!isMobileViewport()) {
             loadContactMap();
         }
@@ -157,6 +163,16 @@ function handleContactPage(pageName) {
 
 if (mapLoadBtn) {
     mapLoadBtn.addEventListener('click', loadContactMap);
+}
+
+if (mapIframe) {
+    const scheduleMapPrefetch = () => prefetchContactMap();
+
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(scheduleMapPrefetch, { timeout: 4000 });
+    } else {
+        setTimeout(scheduleMapPrefetch, 2000);
+    }
 }
 
 const navigationLinks = document.querySelectorAll('[data-nav-link]');

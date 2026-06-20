@@ -99,8 +99,13 @@
     <main>
         <aside class="sidebar " data-sidebar>
             <div class="sidebar-info">
+                <button class="info-more-btn" data-sidebar-btn type="button" aria-expanded="false" aria-controls="sidebar-contacts">
+                    <span data-i18n="sidebar.showContacts">Show Contacts</span>
+                    <ion-icon name="chevron-down" aria-hidden="true"></ion-icon>
+                </button>
+
                 <figure class="avatar-box">
-                    <img src="/miFoto/YO%20X2.png" alt="Juan Espindola" width="96" height="96" loading="eager">
+                    <img src="img/avatar.png" alt="Juan Espindola" width="96" height="96" loading="eager" decoding="async" onerror="this.onerror=null;this.src='miFoto/YO%20X2.png';">
                 </figure>
 
                 <div class="info-content">
@@ -111,14 +116,9 @@
                         <p class="title" data-i18n="sidebar.title3">Full Stack Developer</p>
                     </div>
                 </div>
-
-                <button class="info-more-btn" data-sidebar-btn>
-                    <span data-i18n="sidebar.showContacts">Show Contacts</span>
-                    <ion-icon name="chevron-down"></ion-icon>
-                </button>
             </div>
 
-            <div class="sidebar-info-more">
+            <div class="sidebar-info-more" id="sidebar-contacts">
                 <div class="separator"></div>
 
                 <ul class="contacts-list">
@@ -743,13 +743,13 @@
                         <span data-i18n="contact.loadMap">Tap to view map</span>
                     </button>
 
-                    <figure class="mapbox-embed" data-map-embed hidden>
+                    <figure class="mapbox-embed" data-map-embed>
                         <iframe
                             data-map-iframe
                             title="Ubicación — H. Quiroga 6624, Posadas, Misiones"
                             width="600"
                             height="450"
-                            loading="lazy"
+                            loading="eager"
                             referrerpolicy="no-referrer-when-downgrade"
                             allowfullscreen>
                         </iframe>

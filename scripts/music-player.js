@@ -48,8 +48,8 @@ function initMusicPlayer() {
 
     function updateCollapseLabel(collapsed) {
         if (!collapseBtn) return;
-        const isMobile = window.matchMedia('(max-width: 579px)').matches;
-        if (isMobile) {
+        const isCompact = window.matchMedia('(max-width: 1440px)').matches;
+        if (isCompact) {
             collapseBtn.setAttribute('aria-label', collapsed ? 'Expand music player' : 'Minimize music player');
         } else {
             collapseBtn.setAttribute('aria-label', collapsed ? 'Expand player' : 'Minimize player');
