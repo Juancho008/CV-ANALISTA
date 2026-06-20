@@ -1,112 +1,130 @@
-# Portafolio Web - Juan Espindola
+# CV Web — Juan Ignacio Espíndola
 
-¡Bienvenido a mi portafolio web personal!  
-Este proyecto es una presentación moderna y dinámica de mi experiencia, proyectos y datos de contacto, utilizando tecnologías web actuales y librerías potentes para una experiencia de usuario fluida y atractiva.
-
----
-
-## 🔧 Tecnologías y Librerías utilizadas
-
-### 1. **Google Fonts - Kaushan Script**  
-- Fuente tipográfica elegante y con personalidad que aporta estilo único a los títulos y elementos destacados del sitio.  
-- URL: [https://fonts.google.com/specimen/Kaushan+Script](https://fonts.google.com/specimen/Kaushan+Script)
+Currículum vitae personal en formato web: sitio estático, responsive y bilingüe (español / inglés), pensado para presentar perfil profesional, formación, habilidades, certificaciones y contacto.
 
 ---
 
-### 2. **Bootstrap 5.3.3**  
-- Framework CSS/JS para diseño responsivo, componentes predefinidos y optimización móvil.  
-- Uso de grillas, botones, navbars, y carruseles para estructura y usabilidad impecable.  
-- CDN:  
-  - CSS: `bootstrap.min.css`  
-  - JS: `bootstrap.bundle.min.js` (incluye Popper y plugins)
+## Qué incluye el proyecto
+
+### Secciones del CV
+
+| Sección | Contenido |
+|---------|-----------|
+| **Sidebar** | Nombre, títulos profesionales, datos de contacto, ubicación (Posadas, Misiones) con enlace a Google Maps, redes (GitHub, CodePen, LinkedIn) |
+| **Sobre mí** | Presentación como Analista en Sistemas y cuatro servicios: diseño web, desarrollo web, integración de IA y mantenimiento de código legacy |
+| **Currículum** | Educación (NORMAL N° 10 — Analista en Sistemas; BOP N°1 — secundaria técnica) y habilidades en chips (PHP, JavaScript, TypeScript, React, Node.js, Laravel, SQL, IA, Cloudflare, Vercel, etc.) |
+| **Certificaciones** | Galería de 22 certificados con carrusel (8 por página), navegación por flechas, puntos y swipe en móvil; lightbox al hacer clic en cada imagen |
+| **Contacto** | Mapa embebido y formulario de contacto con validación básica del lado del cliente |
+
+### Funcionalidades extra
+
+- **Selector de idioma (ES / EN)** fijo arriba a la derecha, con transición suave (fade + blur) al cambiar idioma.
+- **Reproductor Spotify** con playlist personal *CV*, modal de consentimiento antes de cargar el embed, minimizar/expandir y enlace directo a Spotify.
+- **Diseño responsive** con barra de navegación inferior en móvil y lateral en escritorio.
+- **Tema oscuro** con acentos en amarillo/naranja y animaciones en hover, tarjetas y elementos interactivos.
 
 ---
 
-### 3. **EmailJS**  
-- Servicio para enviar emails directamente desde JavaScript sin necesidad de backend propio.  
-- Manejo de formularios de contacto con envío asincrónico y feedback al usuario.  
-- CDN: `email.min.js`  
-- Web: [https://www.emailjs.com/](https://www.emailjs.com/)
+## Tecnologías
+
+| Tecnología | Uso |
+|------------|-----|
+| **HTML5** | Estructura semántica del CV |
+| **CSS3** | Estilos, layout responsive, animaciones y variables CSS |
+| **JavaScript (vanilla)** | Navegación, carrusel, lightbox, i18n y reproductor musical |
+| **[Ionicons](https://ionicons.com/)** | Iconografía (redes, navegación, UI) |
+| **[Google Fonts — Poppins](https://fonts.google.com/specimen/Poppins)** | Tipografía principal |
+| **[Spotify Embed](https://developer.spotify.com/documentation/embeds)** | Reproductor de playlist integrado |
+| **[Google Maps](https://maps.google.com/)** | Ubicación en sidebar y sección de contacto |
+
+No requiere Node.js ni build: es un sitio estático listo para abrir en el navegador o desplegar en cualquier hosting (por ejemplo [Vercel](https://vercel.com/)).
 
 ---
 
-### 4. **Typed.js**  
-- Librería para crear animaciones de texto tipo máquina de escribir, ideal para destacar roles o frases en la página principal.  
-- Añade dinamismo y modernidad a la presentación inicial.  
-- CDN: `typed.js`  
-- Web: [https://mattboldt.com/demos/typed-js/](https://mattboldt.com/demos/typed-js/)
+## Estructura del repositorio
+
+```
+CV-ANALISTA/
+├── index.html              # Página principal del CV
+├── css/
+│   └── style.css           # Estilos globales, componentes y media queries
+├── scripts/
+│   ├── i18n.js             # Traducciones ES/EN y cambio de idioma
+│   ├── music-player.js     # Consentimiento, embed Spotify y colapsar/expandir
+│   └── script.js           # Navegación, sidebar, carrusel de certificaciones, lightbox, formulario
+├── certificaciones/        # Imágenes de certificados (PNG/JPG)
+├── LICENSE
+└── README.md
+```
 
 ---
 
-### 5. **SweetAlert2**  
-- Alertas bonitas y personalizables para mostrar mensajes de éxito, error o notificaciones de manera elegante.  
-- Utilizada para confirmaciones de envío de formulario y errores.  
-- CDN: `sweetalert2@11`  
-- Web: [https://sweetalert2.github.io/](https://sweetalert2.github.io/)
+## Reproductor Spotify
+
+Playlist: [CV — Juan Ignacio Espíndola](https://open.spotify.com/playlist/0XXtViuvCuVVgHSz8jJP7g)
+
+| Comportamiento | Escritorio (≥580px) | Móvil (<580px) |
+|----------------|---------------------|----------------|
+| **Al cargar** | Minimizado con barra compacta visible (canción + play/pausa) | Minimizado como chip pequeño (icono + “CV”) |
+| **Minimizado** | Barra de ~300×80px con controles de Spotify | Chip mínimo; la música sigue en segundo plano sin tapar el CV |
+| **Expandido** | Panel ~300×352px con playlist completa | Panel compacto (~152px de alto del embed) sin espacio negro extra |
+| **Consentimiento** | Modal la primera vez; preferencia guardada en `localStorage` (`cv-spotify-consent`) | Igual |
+
+> Spotify no permite controlar play/pausa desde fuera del iframe sin su API Premium. El usuario debe usar los controles del propio embed.
 
 ---
 
-### 6. **Canvas-Confetti**  
-- Efecto visual de confeti animado para celebrar interacciones importantes, en este caso, al llegar al final de la página.  
-- Mejora la experiencia de usuario con un toque divertido y moderno.  
-- CDN: `confetti.browser.min.js`  
-- Web: [https://www.npmjs.com/package/canvas-confetti](https://www.npmjs.com/package/canvas-confetti)
+## Internacionalización (i18n)
 
----
-### 7. **Intro.js**
-
--   Librería para crear tours interactivos y guías de usuario sobre la interfaz.
-
--   Permite destacar elementos clave (como las cards) y explicar su funcionalidad antes de que el usuario interactúe.
-
--   Totalmente personalizable y multilenguaje (usado aquí en español).
-
--   CDN para CSS y JS: ` https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css`,
-` https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js` 
-- Web: [https://introjs.com/](https://introjs.com/)
-
----
-## 🚀 Características destacadas
-
-- **Formulario de contacto con envío instantáneo:** gracias a EmailJS y SweetAlert2, el usuario recibe feedback claro sin recargar la página.  
-- **Animación tipográfica impactante:** utilizando Typed.js, se resaltan roles y habilidades en el inicio con estilo.  
-- **Diseño responsivo y elegante:** con Bootstrap, el sitio se adapta a dispositivos móviles y desktops manteniendo usabilidad y estética.  
-- **Confeti sorpresa:** cuando el usuario llega al final del sitio, se dispara un show de confetis para una experiencia memorable.  
-- **Tipografía única:** Google Fonts aporta un toque personal y profesional que diferencia la página.  
+- Archivo de traducciones: `scripts/i18n.js`
+- Atributos `data-i18n` y `data-i18n-placeholder` en el HTML
+- Idioma guardado en `localStorage`
+- Al cambiar idioma se actualiza el `<title>` y el atributo `lang` del documento
 
 ---
 
-## 📂 Estructura
+## Cómo ejecutarlo en local
 
-- `index.html` - Estructura base con enlaces a librerías CDN  
-- `css/style.css` - Estilos personalizados para branding y ajustes visuales  
-- `scripts/scripts.js` - Código JavaScript para interacciones, formulario y confeti  
-- `img/` - Recursos gráficos y logos  
+1. Clonar o descargar el repositorio.
+2. Servir la carpeta con cualquier servidor estático, por ejemplo:
 
----
+```bash
+# Con Python
+python -m http.server 8080
 
-## 🎨 Ideas para mejorar
+# Con npx (Node)
+npx serve .
+```
 
-- Añadir modo oscuro para cuidar la vista en ambientes con poca luz.  
-- Integrar animaciones SVG para secciones clave.  
-- Ampliar la sección de proyectos con filtros y detalles dinámicos.  
-- Agregar tests automáticos para formularios y experiencia UX.  
+3. Abrir `http://localhost:8080` en el navegador.
 
----
-
-## 📞 Contacto
-
-Si te interesa colaborar o tienes alguna consulta, ¡no dudes en contactarme!  
-Email: juanignacioespindola08@gmail.com
+> Abrir `index.html` directamente con `file://` puede fallar con rutas absolutas (`/css/...`). Usar un servidor local es lo recomendable.
 
 ---
 
-## ⚡ ¡Gracias por visitar mi portafolio!  
+## Cambios y mejoras realizadas
 
-> "La tecnología es solo una herramienta, lo que realmente importa es cómo la usamos para crear impacto."  
-> — Juan Espindola
+Resumen de lo implementado en esta versión del CV:
+
+1. **Perfil actualizado** — Enfoque en Analista en Sistemas, servicios profesionales y datos de contacto reales (dirección, redes, mapa).
+2. **Bilingüe ES/EN** — Selector fijo, traducciones completas y transición visual al cambiar idioma.
+3. **Habilidades** — Chips sin porcentajes, con stack actual (TypeScript, Tailwind, React Native, ChromaDB, Cloudflare, etc.).
+4. **Certificaciones** — Nueva pestaña con 22 certificados, carrusel paginado, lightbox y soporte táctil.
+5. **Reproductor Spotify** — Playlist personal, consentimiento GDPR-style, estados minimizado/expandido diferenciados para PC y móvil.
+6. **UX responsive** — En móvil el reproductor colapsado ocupa el mínimo espacio posible; al expandir se evita el hueco negro del iframe.
+7. **UI** — Animaciones en contactos y tarjetas de servicios, títulos en chips flex y estilo coherente con el selector de idioma.
 
 ---
 
-*Este README fue generado automáticamente para documentar las librerías y características del proyecto, incluyendo la nueva guía interactiva con Intro.js.*
+## Contacto
 
+- **Email:** juanignacioespindola08@gmail.com  
+- **GitHub:** [Juancho008](https://github.com/Juancho008)  
+- **LinkedIn:** [juanespindola08](https://www.linkedin.com/in/juanespindola08/)  
+- **CodePen:** [Juan-Ignacio-Espindola](https://codepen.io/Juan-Ignacio-Espindola)
+
+---
+
+## Licencia
+
+Ver el archivo [LICENSE](LICENSE) del repositorio.
