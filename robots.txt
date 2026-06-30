@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://juan-espindola.vercel.app/sitemap.xml
+Sitemap: https://presentacion-delta.vercel.app/sitemap.xml
