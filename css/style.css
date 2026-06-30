@@ -131,11 +131,37 @@ body { background: var(--smoky-black); }
 }
 
 .preloader-text {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
     font-size: var(--fs7);
     font-weight: var(--fw300);
     color: var(--light-gray70);
     letter-spacing: 0.5px;
-    animation: preloader-pulse 1.4s ease-in-out infinite;
+}
+
+.preloader-progress {
+    font-weight: var(--fw500);
+    color: var(--orange-yellow-crayola);
+    font-variant-numeric: tabular-nums;
+}
+
+.preloader-bar {
+    width: 180px;
+    max-width: 60vw;
+    height: 4px;
+    border-radius: 999px;
+    background: hsla(0, 0%, 100%, 0.1);
+    overflow: hidden;
+}
+
+.preloader-bar-fill {
+    display: block;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--text-gradient-yellow);
+    transition: width 0.3s ease;
 }
 
 @keyframes preloader-spin {

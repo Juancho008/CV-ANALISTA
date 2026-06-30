@@ -2,17 +2,28 @@
 
 initLanguageSwitcher();
 
-// Preloader: oculta la página hasta que todos los recursos estén listos
+// Preloader: oculta la página hasta que TODAS las imágenes (incluidas las
+// lazy y las de paneles ocultos) estén cargadas, mostrando el progreso.
 
 (function initPreloader() {
     const MIN_DISPLAY_MS = 600;
-    const MAX_WAIT_MS = 10000;
+    const MAX_WAIT_MS = 20000;
     const startTime = Date.now();
+    const progressEl = document.querySelector('[data-preloader-progress]');
+    const barEl = document.querySelector('[data-preloader-bar]');
     let revealed = false;
+
+    function setProgress(percent) {
+        const value = Math.max(0, Math.min(100, Math.round(percent)));
+        if (progressEl) progressEl.textContent = value + '%';
+        if (barEl) barEl.style.width = value + '%';
+    }
 
     function reveal() {
         if (revealed) return;
         revealed = true;
+
+        setProgress(100);
 
         const elapsed = Date.now() - startTime;
         const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
@@ -22,11 +33,57 @@ initLanguageSwitcher();
         }, remaining);
     }
 
-    if (document.readyState === 'complete') {
-        reveal();
+    function preloadImages() {
+        const images = Array.from(document.images);
+        const sources = [];
+
+        images.forEach(function (img) {
+            // Forzar la carga inmediata aunque sea lazy o esté en un panel oculto
+            if (img.loading === 'lazy') img.loading = 'eager';
+
+            const src = img.currentSrc || img.getAttribute('src');
+            if (src) sources.push(src);
+        });
+
+        const total = sources.length;
+        if (!total) {
+            reveal();
+            return;
+        }
+
+        let settled = 0;
+        function tick() {
+            settled += 1;
+            setProgress((settled / total) * 100);
+            if (settled >= total) reveal();
+        }
+
+        sources.forEach(function (src) {
+            const loader = new Image();
+            let counted = false;
+
+            function done() {
+                if (counted) return;
+                counted = true;
+                tick();
+            }
+
+            loader.addEventListener('load', done, { once: true });
+            loader.addEventListener('error', done, { once: true });
+            loader.src = src;
+
+            // Si ya estaba en caché y se completó al instante
+            if (loader.complete) done();
+        });
+    }
+
+    // Red de seguridad: nunca dejar la pantalla de carga colgada
+    window.setTimeout(reveal, MAX_WAIT_MS);
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', preloadImages, { once: true });
     } else {
-        window.addEventListener('load', reveal, { once: true });
-        window.setTimeout(reveal, MAX_WAIT_MS);
+        preloadImages();
     }
 })();
 
