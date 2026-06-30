@@ -2,6 +2,34 @@
 
 initLanguageSwitcher();
 
+// Preloader: oculta la página hasta que todos los recursos estén listos
+
+(function initPreloader() {
+    const MIN_DISPLAY_MS = 600;
+    const MAX_WAIT_MS = 10000;
+    const startTime = Date.now();
+    let revealed = false;
+
+    function reveal() {
+        if (revealed) return;
+        revealed = true;
+
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, MIN_DISPLAY_MS - elapsed);
+
+        window.setTimeout(function () {
+            document.body.classList.add('is-loaded');
+        }, remaining);
+    }
+
+    if (document.readyState === 'complete') {
+        reveal();
+    } else {
+        window.addEventListener('load', reveal, { once: true });
+        window.setTimeout(reveal, MAX_WAIT_MS);
+    }
+})();
+
 //Opening or closing side bar
 
 const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }

@@ -2,7 +2,9 @@
 
 const translations = {
     en: {
-        'meta.title': 'Curriculum Vitae',
+        'meta.title': 'Juan Ignacio Espíndola — Systems Analyst & Full Stack Developer',
+        'meta.description': "CV of Juan Ignacio Espíndola, Systems Analyst and Full Stack Developer. Experience in web development, AI integration, PHP, JavaScript, Node.js and Laravel. See my projects and certifications.",
+        'preloader.loading': 'Loading…',
         'sidebar.title1': 'Web Developer',
         'sidebar.title2': 'Graphic Designer',
         'sidebar.title3': 'Full Stack Developer',
@@ -122,7 +124,9 @@ const translations = {
         'music.expand': 'Expand player'
     },
     es: {
-        'meta.title': 'Curriculum Vitae',
+        'meta.title': 'Juan Ignacio Espíndola — Analista en Sistemas y Desarrollador Full Stack',
+        'meta.description': 'CV de Juan Ignacio Espíndola, Analista en Sistemas y Desarrollador Full Stack. Experiencia en desarrollo web, integración de IA, PHP, JavaScript, Node.js y Laravel. Mirá mis proyectos y certificaciones.',
+        'preloader.loading': 'Cargando…',
         'sidebar.title1': 'Desarrollador Web',
         'sidebar.title2': 'Diseñador Gráfico',
         'sidebar.title3': 'Desarrollador Full Stack',
@@ -268,6 +272,11 @@ function updateLanguageContent(lang) {
 
     if (strings['meta.title']) {
         document.title = strings['meta.title'];
+    }
+
+    if (strings['meta.description']) {
+        const metaDesc = document.getElementById('meta-description');
+        if (metaDesc) metaDesc.setAttribute('content', strings['meta.description']);
     }
 
     document.querySelectorAll('[data-lang-btn]').forEach(function (btn) {
