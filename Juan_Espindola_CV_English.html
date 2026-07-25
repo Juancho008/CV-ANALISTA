@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Ignacio Espíndola — Full Stack Developer & Systems Analyst</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text: #1a1a1a;
+            --muted: #444;
+            --accent: #c45c00;
+            --border: #ddd;
+            --bg: #fff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 10.5pt;
+            line-height: 1.45;
+            color: var(--text);
+            background: #f0f0f0;
+            padding: 24px;
+        }
+
+        .cv {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: var(--bg);
+            padding: 14mm 16mm;
+            box-shadow: 0 2px 16px rgba(0,0,0,.08);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 11pt;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 2px;
+        }
+
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin-top: 8px;
+            font-size: 9pt;
+            color: var(--muted);
+        }
+
+        .contact-bar a { color: var(--muted); text-decoration: none; }
+        .contact-bar a:hover { color: var(--accent); }
+
+        section { margin-bottom: 14px; }
+
+        h2 {
+            font-size: 10pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 10.5pt;
+            font-weight: 600;
+            margin-bottom: 1px;
+        }
+
+        .meta {
+            font-size: 9pt;
+            color: var(--muted);
+            font-style: italic;
+            margin-bottom: 4px;
+        }
+
+        .role-block { margin-bottom: 10px; }
+
+        ul {
+            padding-left: 16px;
+            margin-top: 3px;
+        }
+
+        li { margin-bottom: 3px; }
+
+        p { margin-bottom: 6px; }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 20px;
+        }
+
+        .skill-cat strong {
+            display: block;
+            font-size: 9.5pt;
+            margin-bottom: 2px;
+        }
+
+        .skill-cat span {
+            font-size: 9.5pt;
+            color: var(--muted);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .chip-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .chip-list li {
+            background: #f5f5f5;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 8.5pt;
+            margin: 0;
+        }
+
+        .summary { text-align: justify; }
+
+        .availability {
+            font-size: 9pt;
+            font-weight: 600;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        @media print {
+            body { background: #fff; padding: 0; }
+            .cv { box-shadow: none; padding: 10mm 12mm; max-width: none; }
+            a { color: var(--muted) !important; }
+        }
+    </style>
+</head>
+<body>
+    <article class="cv">
+        <header>
+            <h1>Juan Ignacio Espíndola</h1>
+            <p class="subtitle">Full Stack Developer &amp; Systems Analyst</p>
+            <div class="contact-bar">
+                <span>juanignacioespindola08@gmail.com</span>
+                <span>+54 3764 251775</span>
+                <span>Posadas, Misiones, Argentina</span>
+                <a href="https://github.com/Juancho008">GitHub: juancho008</a>
+                <a href="https://www.linkedin.com/in/juanespindola08/">LinkedIn: juanespindola08</a>
+                <a href="https://codepen.io/Juan-Ignacio-Espindola">CodePen</a>
+                <a href="https://presentacion-delta.vercel.app/">Portfolio / Web CV</a>
+            </div>
+            <p class="availability">Availability: Full-time &nbsp;|&nbsp; Open to remote and on-site opportunities</p>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary">
+                Systems Analyst and Full Stack Developer with hands-on experience in software development,
+                technology integration, legacy system maintenance, and solution optimization across public-sector
+                and healthcare environments. Proven ability to deliver institutional web portals, self-service
+                applications, mobile interfaces, and AI-powered features using PHP, JavaScript, Python, Laravel,
+                React, and modern deployment platforms. Comfortable working with MVC, MVVM, and service-oriented
+                architectures, relational and vector databases, Docker-based environments, and monitoring stacks.
+                Continuously learning new tools and frameworks; motivated by complex technical challenges and
+                long-term system maintainability. Strong communicator with experience collaborating in
+                multidisciplinary teams and supporting end users in production settings.
+            </p>
+        </section>
+
+        <section>
+            <h2>Core Competencies</h2>
+            <ul>
+                <li>Full stack web development — front-end, back-end, APIs, and database design</li>
+                <li>Legacy code maintenance, refactoring, and incremental modernization</li>
+                <li>AI integration — generative AI, vector databases (ChromaDB), and workflow automation</li>
+                <li>Institutional portals, public-facing services, and self-service kiosk applications</li>
+                <li>UX/UI implementation with responsive, accessible, and mobile-first layouts</li>
+                <li>Systems analysis, requirements gathering, and continuous delivery in active environments</li>
+                <li>Game development with Godot (GDScript) and C++ for independent projects</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-cat">
+                    <strong>Back-End</strong>
+                    <span>PHP 5/7, Python, Java, Node.js, Laravel, REST APIs, Ajax, JSON</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>Front-End</strong>
+                    <span>JavaScript, TypeScript, React, React Native, JSX, jQuery, HTML5, CSS3, SASS, Tailwind CSS, Bootstrap 5</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>Databases</strong>
+                    <span>Microsoft SQL Server, Oracle, PostgreSQL, SQLite, ChromaDB, SQL (queries, joins, normalization, DML)</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>Architecture &amp; Patterns</strong>
+                    <span>MVC, MVVM, service layers, component-based UI, API-first design</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>DevOps &amp; Tools</strong>
+                    <span>Docker, Prometheus, Git, GitHub, Cloudflare, Vercel, Figma</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>Game Development</strong>
+                    <span>Godot Engine, GDScript, C++, SQLite persistence, MVC in game logic</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>AI &amp; Emerging Tech</strong>
+                    <span>Generative AI, AI agents, prompt-assisted development, vector search, productivity automation</span>
+                </div>
+                <div class="skill-cat">
+                    <strong>Platforms</strong>
+                    <span>Android development fundamentals, web deployment, institutional hosting environments</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Work Experience</h2>
+
+            <div class="role-block">
+                <h3>Full Stack Developer — Boratti Sanatorium (Sanatorio Boratti)</h3>
+                <p class="meta">August 2025 — Present &nbsp;|&nbsp; Posadas, Misiones, Argentina</p>
+                <ul>
+                    <li>Develop and maintain the institutional healthcare portal used by patients and staff for information and digital services.</li>
+                    <li>Build and support self-service totems and emergency-department (guard) totems for patient check-in and workflow automation.</li>
+                    <li>Perform systems analysis, continuous implementation of new features, and ongoing legacy system maintenance.</li>
+                    <li>Work with PHP, JavaScript, Node.js, SQL, Microsoft SQL Server, and Laravel following MVC/MVVM patterns.</li>
+                    <li>Integrate AI-assisted capabilities to improve user experience and internal process efficiency.</li>
+                    <li>Ensure stability, performance, and maintainability of production systems in a high-availability healthcare context.</li>
+                </ul>
+            </div>
+
+            <div class="role-block">
+                <h3>Full Stack Developer / Systems Analyst — Chamber of Representatives of Misiones</h3>
+                <p class="meta">August 2022 — August 2025 &nbsp;|&nbsp; Posadas, Misiones, Argentina</p>
+                <ul>
+                    <li>Led development of the institutional mobile portal delivering parliamentary information and public services to citizens.</li>
+                    <li>Conducted systems analysis, feature planning, and continuous implementation across multiple internal modules.</li>
+                    <li>Maintained and modernized legacy PHP/JavaScript codebases while introducing React-based interfaces where appropriate.</li>
+                    <li>Built and integrated AI-powered solutions using Python, ChromaDB, and vector search for information retrieval.</li>
+                    <li>Managed data across Oracle, SQLite, and ChromaDB; wrote and optimized SQL queries for reporting and application logic.</li>
+                    <li>Deployed and monitored services with Docker and Prometheus in production environments.</li>
+                    <li>Collaborated with institutional stakeholders to translate legislative and administrative requirements into technical deliverables.</li>
+                </ul>
+            </div>
+
+            <div class="role-block">
+                <h3>Full Stack Developer — LAV Transportation</h3>
+                <p class="meta">March 2023 — August 2023 &nbsp;|&nbsp; Argentina</p>
+                <ul>
+                    <li>Developed full stack web solutions for institutional digital operations and internal billing workflows.</li>
+                    <li>Implemented billing and registration systems using PHP, JavaScript, SQL, and Bootstrap 5.</li>
+                    <li>Provided technical support, bug fixes, and enhancements for existing institutional applications.</li>
+                    <li>Delivered responsive interfaces aligned with business requirements and end-user usability standards.</li>
+                </ul>
+            </div>
+
+            <div class="role-block">
+                <h3>Front-End Developer — ITBA &amp; Santander Río Project</h3>
+                <p class="meta">March 2022 — August 2022 &nbsp;|&nbsp; Buenos Aires, Argentina (ITBA)</p>
+                <ul>
+                    <li>Participated in a scholarship-backed front-end development program at ITBA in collaboration with Santander Río.</li>
+                    <li>Designed and implemented user interfaces with a strong focus on UX/UI best practices.</li>
+                    <li>Built interactive web components using JavaScript, Bootstrap 5, and jQuery.</li>
+                    <li>Applied responsive design principles and accessibility considerations across project deliverables.</li>
+                    <li>Gained experience working within structured academic and corporate technology environments.</li>
+                </ul>
+            </div>
+
+            <div class="role-block">
+                <h3>Web Developer — Mascotas en Camino (Freelance / Personal Project)</h3>
+                <p class="meta">2024 — Present</p>
+                <ul>
+                    <li>Designed and developed a pet catalog web application with a modern, responsive interface.</li>
+                    <li>Deployed the application on Vercel with optimized static assets and production-ready configuration.</li>
+                    <li>Managed the full development lifecycle from concept and UI design to deployment and iteration.</li>
+                </ul>
+            </div>
+
+            <div class="role-block">
+                <h3>Game Developer — Camino de la Ley (Independent Project)</h3>
+                <p class="meta">Ongoing</p>
+                <ul>
+                    <li>Develop an independent game project using Godot Engine with GDScript and C++.</li>
+                    <li>Implement game logic following MVC architecture and SQLite-based data persistence.</li>
+                    <li>Handle gameplay systems, state management, and iterative prototyping.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="role-block">
+                <h3>Systems Analyst — Escuela Normal N° 10</h3>
+                <p class="meta">2018 — Posadas, Misiones</p>
+                <p>Formal training in systems analysis and programming fundamentals, algorithms, data structures, and software development foundations.</p>
+            </div>
+            <div class="role-block">
+                <h3>Programming Technician — UTN Mar del Plata (Universidad Tecnológica Nacional)</h3>
+                <p class="meta">Technical degree program</p>
+                <p>Technical education focused on programming, software development practices, and applied computing skills.</p>
+            </div>
+            <div class="role-block">
+                <h3>Advanced Full Stack Developer Scholarship — ITBA (Instituto Tecnológico de Buenos Aires)</h3>
+                <p class="meta">Scholarship program</p>
+                <p>Intensive full stack development training covering modern web technologies, project-based learning, and industry-oriented practices.</p>
+            </div>
+            <div class="role-block">
+                <h3>Front-End &amp; Mobile Applications — Ticmas</h3>
+                <p class="meta">Professional training</p>
+                <p>Specialized coursework in front-end development, mobile application concepts, and modern UI implementation.</p>
+            </div>
+            <div class="role-block">
+                <h3>Secondary Education (Technical Orientation) — BOP N° 1</h3>
+                <p class="meta">2014</p>
+                <p>Technical secondary school with emphasis on mathematics, science, and early exposure to engineering and technical concepts.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Projects</h2>
+            <ul>
+                <li><strong>Sanatorio Boratti Portal</strong> — Institutional healthcare portal with patient-facing services (portal.sanatorioboratti.com.ar).</li>
+                <li><strong>Self-Service &amp; Guard Totems</strong> — Kiosk applications for patient self-management and emergency department workflows.</li>
+                <li><strong>Chamber of Deputies Mobile Portal</strong> — Public parliamentary information and services platform (diputadosmisiones.gov.ar).</li>
+                <li><strong>LAV Billing System</strong> — Internal billing and registration web application for transportation operations.</li>
+                <li><strong>Serenna Wellness Center</strong> — Corporate wellness website with modern responsive design (serenna.vercel.app).</li>
+                <li><strong>M&amp;J Web &amp; Marketing</strong> — Business portfolio and digital marketing presence (porfolio-my-j.vercel.app).</li>
+                <li><strong>Beauty Cosmetics Store</strong> — E-commerce style product catalog (tienda-producto-cosmetologia.vercel.app).</li>
+                <li><strong>Huellas con Historia</strong> — Rescued animals awareness and adoption platform (animales-rescatados.vercel.app).</li>
+                <li><strong>Network Downloader</strong> — Open-source tool for media download and conversion (GitHub).</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Certifications &amp; Continuous Learning</h2>
+            <p>30+ professional certifications including:</p>
+            <ul class="chip-list">
+                <li>Advanced Full Stack Developer — ITBA</li>
+                <li>Generative AI Fundamentals</li>
+                <li>AI for Productivity</li>
+                <li>AI-Powered Development</li>
+                <li>AI Agents Immersion — Alura</li>
+                <li>Google Gemini AI — Alura</li>
+                <li>Cursor + Python — Santander Open Academy</li>
+                <li>Google Ads Search &amp; Video</li>
+                <li>Interactive SQL (complete track)</li>
+                <li>Advanced CSS</li>
+                <li>UX Content Design</li>
+                <li>Accessible &amp; Inclusive Design</li>
+                <li>Figma Workshop</li>
+                <li>Git &amp; GitHub Fundamentals</li>
+                <li>Digital Cybersecurity</li>
+                <li>Programming Logic — Alura</li>
+                <li>Excel — Santander Open Academy</li>
+            </ul>
+        </section>
+
+        <div class="two-col">
+            <section>
+                <h2>Soft Skills</h2>
+                <ul>
+                    <li>Clear written and verbal communication</li>
+                    <li>Active listening and stakeholder empathy</li>
+                    <li>Adaptability in fast-changing technical environments</li>
+                    <li>Analytical problem solving and debugging</li>
+                    <li>Team collaboration and knowledge sharing</li>
+                    <li>Fast learner with self-directed study habits</li>
+                    <li>Attention to detail in production systems</li>
+                    <li>Client and end-user oriented mindset</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Languages</h2>
+                <ul>
+                    <li><strong>Spanish</strong> — Native</li>
+                    <li><strong>English</strong> — Professional working proficiency (reading, writing, technical documentation)</li>
+                </ul>
+                <h2 style="margin-top: 12px;">Additional Information</h2>
+                <ul>
+                    <li>Based in Posadas, Misiones, Argentina</li>
+                    <li>Available for full-time employment immediately</li>
+                    <li>Experience in public sector, healthcare, and private institutional projects</li>
+                    <li>Active GitHub contributor and continuous learner in AI and web technologies</li>
+                </ul>
+            </section>
+        </div>
+    </article>
+</body>
+</html>
